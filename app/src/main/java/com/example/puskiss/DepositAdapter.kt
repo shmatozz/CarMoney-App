@@ -1,5 +1,8 @@
 package com.example.puskiss
 
+import android.content.Context
+import android.content.SharedPreferences
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,11 +11,12 @@ import com.example.puskiss.databinding.DepositItemBinding
 
 class DepositAdapter: RecyclerView.Adapter<DepositAdapter.DepositHolder>() {
 
-    private val depositList = ArrayList<Deposit>()
+    val depositList = ArrayList<Deposit>()
+
     class DepositHolder(item: View): RecyclerView.ViewHolder(item) {
         private val binding = DepositItemBinding.bind(item)
         fun bind(deposit: Deposit) = with(binding) {
-            depositTitle.text = "Вклад"
+            depositTitle.text = deposit.title
             depositBalace.text = deposit.currentSum.toString()
         }
     }
@@ -34,5 +38,12 @@ class DepositAdapter: RecyclerView.Adapter<DepositAdapter.DepositHolder>() {
     fun addDeposit(deposit: Deposit) {
         depositList.add(deposit)
         notifyDataSetChanged()
+    }
+
+    fun deleteDeposit() {
+        if (depositList.size > 0) {
+            depositList.removeLast()
+            notifyDataSetChanged()
+        }
     }
 }

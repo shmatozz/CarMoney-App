@@ -5,4 +5,5 @@
     <string name="title_notifications">Notifications</string>
     <string name="number">%1$d</string>
     <string name="nothing">nothing</string>
+    <string name="deposit">Deposit</string>
 </resources>
