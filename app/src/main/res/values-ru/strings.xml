@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PusKiss</string>
+    <string name="title_home">Главная</string>
+    <string name="title_dashboard">Банк</string>
+    <string name="title_notifications">Уведомления</string>
+    <string name="number">%1$d</string>
+    <string name="nothing">Ничего</string>
+</resources>

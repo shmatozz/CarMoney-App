@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="30dp"
+    tools:context=".ui.home.HomeFragment">
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="32dp"
+        android:fontFamily="@font/advent_pro_medium"
+        android:text="@string/nothing"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/total_counter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/total_counter"
+        android:layout_width="71dp"
+        android:layout_height="78dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="128dp"
+        android:fontFamily="@font/advent_pro_bold"
+        android:text="@string/number"
+        android:textAlignment="center"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toTopOf="@+id/green_plus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date" />
+
+    <Button
+        android:id="@+id/yellow_plus"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="160dp"
+        android:backgroundTint="@color/yellow"
+        android:text="@string/number"
+        android:textColorHighlight="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/green_plus"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/green_plus"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="160dp"
+        android:backgroundTint="@color/green"
+        android:text="@string/number"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/orange_plus"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toEndOf="@+id/yellow_plus" />
+
+    <Button
+        android:id="@+id/orange_plus"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="160dp"
+        android:backgroundTint="@color/orange"
+        android:text="@string/number"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/green_plus" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
