@@ -5,75 +5,119 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingHorizontal="30dp"
+    app:layout_constraintCircleRadius="10dp"
     tools:context=".ui.home.HomeFragment">
 
     <TextView
         android:id="@+id/date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:layout_marginBottom="32dp"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/text_background"
         android:fontFamily="@font/advent_pro_medium"
+        android:gravity="center"
         android:text="@string/nothing"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/total_counter"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/total_counter"
-        android:layout_width="71dp"
-        android:layout_height="78dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginBottom="128dp"
-        android:fontFamily="@font/advent_pro_bold"
-        android:text="@string/number"
-        android:textAlignment="center"
-        android:textSize="60sp"
-        app:layout_constraintBottom_toTopOf="@+id/green_plus"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="0dp"
+        android:layout_height="451dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/text_background"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/date" />
+        app:layout_constraintTop_toBottomOf="@+id/date">
 
-    <Button
-        android:id="@+id/yellow_plus"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginBottom="150dp"
-        android:backgroundTint="@color/yellow"
-        android:text="@string/number"
-        android:textColorHighlight="#FFFFFF"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/green_plus"
-        app:layout_constraintStart_toStartOf="parent" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="411dp"
+            android:background="@drawable/text_background">
 
-    <Button
-        android:id="@+id/green_plus"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="150dp"
-        android:backgroundTint="@color/green"
-        android:text="@string/number"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/orange_plus"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toEndOf="@+id/yellow_plus" />
+            <Button
+                android:id="@+id/yellow_plus"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="@color/yellow"
+                android:text="@string/number"
+                android:textColorHighlight="#FFFFFF"
+                android:textSize="24sp"
+                app:cornerRadius="15dp"
+                app:layout_constraintBottom_toTopOf="@+id/withdraw_button"
+                app:layout_constraintEnd_toStartOf="@+id/green_plus"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/total_counter"
+                tools:ignore="TextContrastCheck" />
 
-    <Button
-        android:id="@+id/orange_plus"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginBottom="150dp"
-        android:backgroundTint="@color/orange"
-        android:text="@string/number"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/green_plus" />
+            <TextView
+                android:id="@+id/total_counter"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:fontFamily="@font/advent_pro_bold"
+                android:text="@string/number"
+                android:textAlignment="center"
+                android:textSize="60sp"
+                app:layout_constraintBottom_toTopOf="@+id/green_plus"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/orange_plus"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="24dp"
+                android:backgroundTint="@color/orange"
+                android:text="@string/number"
+                android:textSize="24sp"
+                app:cornerRadius="15dp"
+                app:layout_constraintBottom_toTopOf="@+id/withdraw_button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/green_plus"
+                app:layout_constraintTop_toBottomOf="@+id/total_counter"
+                tools:ignore="TextContrastCheck" />
+
+            <Button
+                android:id="@+id/green_plus"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_marginTop="50dp"
+                android:backgroundTint="@color/green"
+                android:text="@string/number"
+                android:textSize="24sp"
+                app:cornerRadius="15dp"
+                app:layout_constraintBottom_toTopOf="@+id/withdraw_button"
+                app:layout_constraintEnd_toStartOf="@+id/orange_plus"
+                app:layout_constraintStart_toEndOf="@+id/yellow_plus"
+                app:layout_constraintTop_toBottomOf="@+id/total_counter"
+                tools:ignore="TextContrastCheck" />
+
+            <Button
+                android:id="@+id/withdraw_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/withdraw"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/green_plus"
+                tools:ignore="TextContrastCheck" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
