@@ -18,7 +18,7 @@ class HomeViewModel : ViewModel() {
             calendar.get(Calendar.MINUTE),
             calendar.get(Calendar.SECOND)
         )
-        value = "${current.dayOfMonth} ${current.month} "
+        value = "${current.dayOfMonth} ${current.month.plus(1)} "
     }
 
     val text: LiveData<String> = _text
