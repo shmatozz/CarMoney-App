@@ -3,17 +3,15 @@ package com.example.puskiss
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.util.Log
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.puskiss.databinding.ActivityMainBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import java.time.LocalDateTime
 import java.util.Calendar
-import kotlin.math.abs
 import kotlin.math.pow
 import kotlin.math.roundToInt
 
@@ -25,6 +23,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        // check if last visit was not today and we need to update our counters
         checkLastVisit()
 
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -45,10 +44,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun checkLastVisit() {
+        // get preferences
         preferences = getSharedPreferences("stats", Context.MODE_PRIVATE)
         val lastVisitDay = preferences.getInt("LAST_VISIT_DAY", 0)
         val lastVisitMonth = preferences.getInt("LAST_VISIT_MONTH", 0)
 
+        // get current date
         val calendar = Calendar.getInstance()
         val current = LocalDateTime.of(
             calendar.get(Calendar.YEAR),
@@ -59,17 +60,20 @@ class MainActivity : AppCompatActivity() {
             calendar.get(Calendar.SECOND)
         )
 
+        // compare current date and last visit date
         if ((current.dayOfMonth - lastVisitDay) + (current.month.value - lastVisitMonth) != 0) {
-            val daysPass: Int
-            if (current.dayOfMonth > lastVisitDay) {
-                daysPass = current.dayOfMonth - lastVisitDay
+            // if day changed -> calculate how many days passed from last visit and update counters
+            val daysPass: Int = if (current.dayOfMonth > lastVisitDay) {
+                current.dayOfMonth - lastVisitDay
             } else {
-                daysPass = current.dayOfMonth + (current.month.length(false) - lastVisitDay)
+                current.dayOfMonth + (current.month.length(false) - lastVisitDay)
             }
 
+            // update counters
             addPercentageToDeposit(daysPass)
             moveToDeposit()
 
+            // update last visit info
             val editor = preferences.edit()
             editor.putInt("LAST_VISIT_DAY",  current.dayOfMonth)
             editor.putInt("LAST_VISIT_MONTH",  current.month.value)
@@ -77,6 +81,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * Function to add percentages to all deposits
+     *
+     * @param dayPass - number of days to add percentage for every day
+     */
     private fun addPercentageToDeposit(dayPass: Int) {
         val countDeposits = preferences.getInt("DEPOSIT_COUNT", 0)
 
@@ -91,6 +100,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * Function to move remained balance to deposit and update counters to 0
+     */
     private fun moveToDeposit() {
         val lastTotalCount = preferences.getInt("TOTAL", 0)
 
