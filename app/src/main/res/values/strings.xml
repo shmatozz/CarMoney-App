@@ -7,4 +7,8 @@
     <string name="nothing">nothing</string>
     <string name="deposit">Deposit</string>
     <string name="withdraw">Withdraw</string>
+    <string name="available_count">Available: %1$d</string>
+    <string name="max" translatable="false">MAX</string>
+    <string name="min" translatable="false">MIN</string>
+    <string name="zero" translatable="false">0</string>
 </resources>
