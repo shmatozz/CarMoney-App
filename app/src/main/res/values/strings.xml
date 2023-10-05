@@ -11,4 +11,6 @@
     <string name="max" translatable="false">MAX</string>
     <string name="min" translatable="false">MIN</string>
     <string name="zero" translatable="false">0</string>
+    <string name="not_enough_warning">You don\'t have enough!</string>
+    <string name="negative_warning">Negative is forbidden!</string>
 </resources>

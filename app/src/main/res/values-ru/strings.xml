@@ -9,4 +9,6 @@
     <string name="deposit">Вклад</string>
     <string name="withdraw">Вывести</string>
     <string name="available_count">Доступно: %1$d</string>
+    <string name="not_enough_warning">Недостаточно средств!</string>
+    <string name="negative_warning">Отрицательное значение!</string>
 </resources>
