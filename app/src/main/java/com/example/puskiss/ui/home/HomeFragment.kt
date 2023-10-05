@@ -1,6 +1,7 @@
 package com.example.puskiss.ui.home
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,6 +12,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.puskiss.R
+import com.example.puskiss.WithdrawActivity
 import com.example.puskiss.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -24,6 +26,7 @@ class HomeFragment : Fragment() {
     private lateinit var yellowButton: Button
     private lateinit var greenButton: Button
     private lateinit var orangeButton: Button
+    private lateinit var withdrawButton: Button
     private lateinit var totalCount: TextView
 
     private lateinit var prefs: SharedPreferences
@@ -49,6 +52,7 @@ class HomeFragment : Fragment() {
         yellowButton = binding.yellowPlus
         greenButton = binding.greenPlus
         orangeButton = binding.orangePlus
+        withdrawButton = binding.withdrawButton
         totalCount = binding.totalCounter
 
         totalCount.text = prefs.getInt("TOTAL", 0).toString()
@@ -81,6 +85,10 @@ class HomeFragment : Fragment() {
             longButtonPressed(orangeButton)
         }
 
+        withdrawButton.setOnClickListener {
+            openWithdrawMenu()
+        }
+
         return root
     }
 
@@ -100,6 +108,11 @@ class HomeFragment : Fragment() {
         refreshTotalCount()
 
         return true
+    }
+
+    private fun openWithdrawMenu() {
+        val intent = Intent(context, WithdrawActivity::class.java)
+        startActivity(intent)
     }
 
     private fun refreshTotalCount() {
