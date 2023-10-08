@@ -135,6 +135,15 @@ class HomeFragment : Fragment() {
         editor.apply()
     }
 
+    override fun onResume() {
+        super.onResume()
+
+        binding.totalCounter.text = prefs.getInt("TOTAL", 0).toString()
+        binding.yellowPlus.text = prefs.getInt("YELLOW", 0).toString()
+        binding.greenPlus.text = prefs.getInt("GREEN", 0).toString()
+        binding.orangePlus.text = prefs.getInt("ORANGE", 0).toString()
+
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()
