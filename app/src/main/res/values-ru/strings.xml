@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">PusKiss</string>
+    <string name="app_name">CarMoney</string>
     <string name="title_home">Главная</string>
     <string name="title_dashboard">Банк</string>
     <string name="title_notifications">Уведомления</string>
