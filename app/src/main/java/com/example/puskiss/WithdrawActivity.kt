@@ -1,8 +1,6 @@
 package com.example.puskiss
 
-
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.puskiss.databinding.ActivityWithdrawBinding
 
