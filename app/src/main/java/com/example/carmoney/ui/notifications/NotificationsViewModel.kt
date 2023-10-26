@@ -1,4 +1,4 @@
-package com.example.puskiss.ui.notifications
+package com.example.carmoney.ui.notifications
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

@@ -1,4 +1,4 @@
-package com.example.puskiss.ui.dashboard
+package com.example.carmoney.ui.dashboard
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -10,10 +10,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.puskiss.Deposit
-import com.example.puskiss.DepositAdapter
-import com.example.puskiss.R
-import com.example.puskiss.databinding.FragmentBankBinding
+import com.example.carmoney.Deposit
+import com.example.carmoney.DepositAdapter
+import com.example.carmoney.R
+import com.example.carmoney.databinding.FragmentBankBinding
 
 class DashboardFragment : Fragment() {
 

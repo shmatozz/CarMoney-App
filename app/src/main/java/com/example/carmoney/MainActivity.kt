@@ -1,4 +1,4 @@
-package com.example.puskiss
+package com.example.carmoney
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -8,7 +8,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import com.example.puskiss.databinding.ActivityMainBinding
+import com.example.carmoney.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import java.time.LocalDateTime
 import java.util.Calendar

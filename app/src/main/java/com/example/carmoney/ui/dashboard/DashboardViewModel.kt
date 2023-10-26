@@ -1,4 +1,4 @@
-package com.example.puskiss.ui.dashboard
+package com.example.carmoney.ui.dashboard
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

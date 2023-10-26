@@ -1,4 +1,4 @@
-package com.example.puskiss.ui.home
+package com.example.carmoney.ui.home
 
 import android.content.Context
 import android.content.Intent
@@ -11,9 +11,9 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.puskiss.R
-import com.example.puskiss.WithdrawActivity
-import com.example.puskiss.databinding.FragmentHomeBinding
+import com.example.carmoney.R
+import com.example.carmoney.WithdrawActivity
+import com.example.carmoney.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
 

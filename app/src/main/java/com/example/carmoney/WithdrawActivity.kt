@@ -1,8 +1,8 @@
-package com.example.puskiss
+package com.example.carmoney
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.puskiss.databinding.ActivityWithdrawBinding
+import com.example.carmoney.databinding.ActivityWithdrawBinding
 
 class WithdrawActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

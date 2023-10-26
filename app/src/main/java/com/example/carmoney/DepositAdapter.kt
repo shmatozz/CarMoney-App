@@ -1,10 +1,10 @@
-package com.example.puskiss
+package com.example.carmoney
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.puskiss.databinding.DepositItemBinding
+import com.example.carmoney.databinding.DepositItemBinding
 
 class DepositAdapter: RecyclerView.Adapter<DepositAdapter.DepositHolder>() {
 

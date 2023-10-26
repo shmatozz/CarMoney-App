@@ -1,4 +1,4 @@
-package com.example.puskiss
+package com.example.carmoney
 
 import org.junit.Test
 

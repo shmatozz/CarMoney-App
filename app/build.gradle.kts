@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.puskiss"
+    namespace = "com.example.carmoney"
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "com.example.puskiss"
+        applicationId = "com.example.carmoney"
         minSdk = 29
         targetSdk = 33
         versionCode = 1
