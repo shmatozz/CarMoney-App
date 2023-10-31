@@ -10,7 +10,6 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.carmoney.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import java.time.LocalDateTime
 import java.util.Calendar
 import kotlin.math.pow
 import kotlin.math.roundToInt
