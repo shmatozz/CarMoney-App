@@ -11,4 +11,10 @@
     <string name="available_count">Доступно: %1$d</string>
     <string name="not_enough_warning">Недостаточно средств!</string>
     <string name="negative_warning">Отрицательное значение!</string>
+    <string name="phone">Номер телефона</string>
+    <string name="password">Пароль</string>
+    <string name="registration">Регистрация</string>
+    <string name="logo_description">Application logo</string>
+    <string name="go">Вход</string>
+    <string name="enter_pin">Введите свой PIN</string>
 </resources>
