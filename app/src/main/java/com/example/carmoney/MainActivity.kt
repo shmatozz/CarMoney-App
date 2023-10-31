@@ -72,6 +72,12 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * Function to return number of days in each months
+     *
+     * @param month - current month
+     * @param leap - leap year
+     */
     private fun length(month: Int, leap: Boolean = false): Int {
         if (leap && month == 1) return 29
         when (month) {
@@ -92,6 +98,11 @@ class MainActivity : AppCompatActivity() {
         return -1
     }
 
+    /**
+     * Function to detect leap year
+     *
+     * @param year - current year
+     */
     private fun isLeap(year: Int) : Boolean {
         return year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)
     }
