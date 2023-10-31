@@ -51,22 +51,14 @@ class MainActivity : AppCompatActivity() {
 
         // get current date
         val calendar = Calendar.getInstance()
-        val current = LocalDateTime.of(
-            calendar.get(Calendar.YEAR),
-            calendar.get(Calendar.MONTH),
-            calendar.get(Calendar.DAY_OF_MONTH),
-            calendar.get(Calendar.HOUR_OF_DAY),
-            calendar.get(Calendar.MINUTE),
-            calendar.get(Calendar.SECOND)
-        )
 
         // compare current date and last visit date
-        if ((current.dayOfMonth - lastVisitDay) + (current.month.value - lastVisitMonth) != 0) {
+        if ((calendar.get(Calendar.DAY_OF_MONTH) - lastVisitDay) + (calendar.get(Calendar.MONTH) - lastVisitMonth) != 0) {
             // if day changed -> calculate how many days passed from last visit and update counters
-            val daysPass: Int = if (current.dayOfMonth > lastVisitDay) {
-                current.dayOfMonth - lastVisitDay
+            val daysPass: Int = if (calendar.get(Calendar.DAY_OF_MONTH) > lastVisitDay) {
+                calendar.get(Calendar.DAY_OF_MONTH) - lastVisitDay
             } else {
-                current.dayOfMonth + (current.month.length(false) - lastVisitDay)
+                calendar.get(Calendar.DAY_OF_MONTH) + (length(calendar.get(Calendar.MONTH), isLeap(calendar.get(Calendar.YEAR))) - lastVisitDay)
             }
 
             // update counters
@@ -75,10 +67,34 @@ class MainActivity : AppCompatActivity() {
 
             // update last visit info
             val editor = preferences.edit()
-            editor.putInt("LAST_VISIT_DAY",  current.dayOfMonth)
-            editor.putInt("LAST_VISIT_MONTH",  current.month.value)
+            editor.putInt("LAST_VISIT_DAY",  calendar.get(Calendar.DAY_OF_MONTH))
+            editor.putInt("LAST_VISIT_MONTH",  calendar.get(Calendar.MONTH))
             editor.apply()
         }
+    }
+
+    private fun length(month: Int, leap: Boolean = false): Int {
+        if (leap && month == 1) return 29
+        when (month) {
+            0 -> return 31
+            1 -> return 28
+            2 -> return 31
+            3 -> return 30
+            4 -> return 31
+            5 -> return 30
+            6 -> return 31
+            7 -> return 31
+            8 -> return 30
+            9 -> return 31
+            10 -> return 30
+            11 -> return 31
+        }
+
+        return -1
+    }
+
+    private fun isLeap(year: Int) : Boolean {
+        return year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)
     }
 
     /**

@@ -10,15 +10,26 @@ class HomeViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
         val calendar = Calendar.getInstance()
-        val current = LocalDateTime.of(
-            calendar.get(Calendar.YEAR),
-            calendar.get(Calendar.MONTH),
-            calendar.get(Calendar.DAY_OF_MONTH),
-            calendar.get(Calendar.HOUR_OF_DAY),
-            calendar.get(Calendar.MINUTE),
-            calendar.get(Calendar.SECOND)
-        )
-        value = "${current.dayOfMonth} ${current.month.plus(1)} "
+        value = "${calendar.get(Calendar.DAY_OF_MONTH)} ${monthToText(calendar.get(Calendar.MONTH))} "
+    }
+
+    private fun monthToText(month: Int) : String {
+        when (month) {
+            0 -> return "January"
+            1 -> return "February"
+            2 -> return "March"
+            3 -> return "April"
+            4 -> return "May"
+            5 -> return "June"
+            6 -> return "July"
+            7 -> return "August"
+            8 -> return "September"
+            9 -> return "October"
+            10 -> return "November"
+            11 -> return "December"
+        }
+
+        return "null"
     }
 
     val text: LiveData<String> = _text
